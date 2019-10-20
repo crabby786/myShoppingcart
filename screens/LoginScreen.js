@@ -39,41 +39,41 @@ class LoginScreen extends React.Component {
     const { navigation } = this.props;
     return (
       <Container>
-        <Block center middle>
-          <Block>
+        <Content padder contentContainerStyle={{flex:1,justifyContent:'center',alignItems:'center' }}>
+          <Block middle>
             <Image
               source={require("../assets/images/Base/Logo.png")}
               style={{ height: 28, width: 102 }}
             />
           </Block>
-          <Block flex={2.5} center>
+          <Block flex={3} center>
             <H3 style={{ marginBottom: 6 }}>
               Sign in to Ekart
             </H3>
-            <Text style={{color:theme.black3}}>
+            <Text style={{color:theme.colors.black3}}>
               Please enter your credentials to proceed.
             </Text>
-            <Block center style={{ marginTop: 44 }}>
+            <Block center style={{ marginTop: 44,paddingHorizontal:15 }}>
               <Item floatingLabel
                 style={{ marginBottom: 25 }}>
                   <Label>Email address</Label>
               <Input/>
               </Item>
               
-              <Item floatingLabel last  style={{ marginBottom: 25 }}>
+              <Item floatingLabel  style={{ marginBottom: 55 }}>
                 <Label>Password</Label>
               <Input/>
               </Item>
               <Button block primary
-                style={{ marginBottom: 12 }}
+                style={{ marginBottom: 20 }}
                 onPress={this._signInAsync}
               >
                 <Text >Login</Text>
               </Button>
-              <Text style={{color:theme.gray}}>
+              <Text style={{color:theme.colors.gray}}>
                 Don't have an account?{" "}
                 <Text
-                  style={{color:theme.blue,height:18}}
+                  style={{color:theme.colors.blue,height:18}}
                   // onPress={() => navigation.navigate("Register")}
                 >
                   Sign up
@@ -81,7 +81,7 @@ class LoginScreen extends React.Component {
               </Text>
             </Block>
           </Block>
-        </Block>
+        </Content>
       </Container>
     );
   }
